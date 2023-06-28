@@ -1,0 +1,20 @@
+<mat-card class="main-opacity">
+    <mat-card-content class="p-3">
+        <h1><b>{{data?.title ? data!.title : ''}}</b></h1>
+        <mat-divider></mat-divider>
+        <b>Due date : </b>{{data?.dueDate ? renderDate(data!.dueDate) : ''}}<br><br>
+        <b>Create by : </b>{{data?.createBy ? data!.createBy : ''}}
+        <mat-divider></mat-divider>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8">
+                <div class="mt-2 d-flex flex-row justify-content-between">
+                    <button mat-raised-button color="primary" (click)="viewEventHandle(data!)">View</button>
+                    <button mat-raised-button color="accent" (click)="updateEventHandle(data!)">Edit</button>
+                    <button mat-raised-button color="warn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>

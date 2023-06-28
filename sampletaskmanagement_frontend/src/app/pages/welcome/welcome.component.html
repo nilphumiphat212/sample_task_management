@@ -1,0 +1,13 @@
+<div class="d-flex flex-col h-100 w-100 justify-content-center align-items-center">
+    <div class="card w-25">
+        <div class="card-body text-center p-3">
+            <h3><b>SAMPLE TASK MANAGMENT</b></h3>
+            <mat-divider></mat-divider><br>
+            <mat-form-field class="w-100">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="name" placeholder="enter your name" autocomplete="off" /><br>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="w-100" (click)="onSubmitName()">Enter</button>
+        </div>
+    </div>
+</div>
