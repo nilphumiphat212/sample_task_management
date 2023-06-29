@@ -20,7 +20,8 @@ export class DashboardComponent implements OnInit {
       this.service.getAllTask()
         .subscribe((res) => {
           if (res.success) this.items = res.data!;
-        }), 1000);
+          console.log(this.items)
+        }), 500);
   }
 
   ngOnInit(): void {

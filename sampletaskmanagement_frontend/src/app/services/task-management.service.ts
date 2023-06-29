@@ -25,6 +25,7 @@ export class TaskManagementService {
   }
 
   updateTask(data: TaskDtoModel): Observable<BaseResponseModel<any>> {
+    console.log('aaaa', data);
     return this.http.put<BaseResponseModel<any>>(URLS.UPDATE_TASK_URL, data);
   }
 

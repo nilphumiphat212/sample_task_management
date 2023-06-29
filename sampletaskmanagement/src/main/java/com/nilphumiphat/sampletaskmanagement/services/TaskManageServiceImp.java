@@ -28,7 +28,11 @@ public class TaskManageServiceImp implements TaskManageService {
     }
 
     public void updateTask(TaskEntityModel task) {
-        repository.save(task);
+        TaskEntityModel taskFind = repository.findById(task.getId());
+        taskFind.setTitle(task.getTitle())
+                .setDesc(task.getDesc())
+                .setDueDate(task.getDueDate());
+        repository.save(taskFind);
     }
 
     @Override

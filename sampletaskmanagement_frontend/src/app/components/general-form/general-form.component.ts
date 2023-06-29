@@ -79,13 +79,18 @@ export class GeneralFormComponent implements OnInit {
   }
 
   onSubmitData(): void {
-    if (this.taskTitle && this.taskDesc && this.taskDueDate)
-      this.onSubmit.emit({
+    if (this.taskTitle && this.taskDesc && this.taskDueDate) {
+      const result: GeneralFormResult = {
         title: this.taskTitle,
         desc: this.taskDesc,
         dueDate: this.taskDueDate!,
         actionBy: this.dataStore.name.value!
-      });
+      };
+
+      if (this.initialData?.id) result['id'] = this.initialData.id;
+
+      this.onSubmit.emit(result);
+    }
     else
       Swal.fire({
         icon: 'warning',
